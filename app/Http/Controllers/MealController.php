@@ -71,13 +71,5 @@ class MealController extends Controller
             return new MealResourceCollection($meals->paginate($perPage));
         }
         
-
-       
-        
-     
-
-        
-       
-
 }
 

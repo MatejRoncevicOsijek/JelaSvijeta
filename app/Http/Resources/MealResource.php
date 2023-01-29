@@ -23,9 +23,9 @@ class MealResource extends JsonResource
 
     $timeStamp = $request->get('diff_time');
     $date = date("Y-m-d H:i:s", $timeStamp);
-    if ($timeStamp && $this->deleted_at > $date) {
+    if ($timeStamp && $timeStamp > 0 && $this->trashed()) {
         $status = 'deleted';
-    } elseif ($timeStamp && $this->updated_at >= $date) {
+    } elseif ($timeStamp && $timeStamp > 0 && $this->updated_at >= $date) {
         $status = 'modified';
     } else {
         $status = 'created';

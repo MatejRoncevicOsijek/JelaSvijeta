@@ -17,7 +17,7 @@ use Astrotomic\Translatable\Translatable;
 class Meal extends Model implements TranslatableContract
 {
     use HasFactory;
-    #use SoftDeletes;
+    use SoftDeletes;
 
     use Translatable;
     
