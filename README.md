@@ -1,3 +1,10 @@
+ Getting Started:
+ 1. Rename or copy .env.example file to .env and write required database information
+ 2. Run php artisan migrate
+ 3. Run php artisan db:seed
+ 4. When using the API change the language in the URL with one of three languages lang=en,lang=hr or lang=fr
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
