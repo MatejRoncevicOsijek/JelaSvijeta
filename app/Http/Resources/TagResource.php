@@ -17,9 +17,7 @@ class TagResource extends JsonResource
         return [
             'id'=> $this->id,
             'title'=> $this->translate($request->get('lang'))->title,
-            'slug'=> $this->slug
-            
-            
+            'slug'=> $this->slug      
         ];
     }
 }

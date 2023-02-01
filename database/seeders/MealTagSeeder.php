@@ -17,8 +17,7 @@ class MealTagSeeder extends Seeder
      */
     public function run()
     {
-  
-        $id_meals = Meal::pluck('id');
+        $id_meals = Meal::withTrashed()->pluck('id');
         foreach ($id_meals as $id_meal) {
             $id_tags = Tag::pluck('id')->unique()->random(3)->all();
             foreach ($id_tags as $id_tag) {
@@ -26,7 +25,7 @@ class MealTagSeeder extends Seeder
                 'tag_id' => $id_tag,
                 'meal_id' => $id_meal,
                 ]);
-         }
+            }
         }
     }
 }

@@ -18,8 +18,6 @@ class IngredientResource extends JsonResource
             'id'=> $this->id,
             'title'=> $this->translate($request->get('lang'))->title,
             'slug'=> $this->slug
-            
-            
         ];
     }
 }

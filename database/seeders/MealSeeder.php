@@ -16,15 +16,12 @@ class MealSeeder extends Seeder
      */
     public function run()
     {
-
-        
-        
         $id_category=Category::pluck('id');
         for ($i = 0; $i < 10; $i++) {
             $meal = new Meal();
-            $meal->category_id =rand(0,1) ? NULL : $id_category[$i];
-            $meal->deleted_at=rand(0,1) ? NULL : now();
+            $meal->category_id =rand(0, 1) ? null : $id_category[$i];
+            $meal->deleted_at=rand(0, 1) ? null : now();
             $meal->save();
+        }
     }
-}
 }

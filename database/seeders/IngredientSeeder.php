@@ -14,16 +14,17 @@ class IngredientSeeder extends Seeder
      *
      * @return void
      */
-    
-    public function run(){
+
+    public function run()
+    {
         $faker = Faker::create();
         $j=0;
 
-    for ($i = 0; $i < 10; $i++) {
-        $j++;
-        $Ingredient = new Ingredient();
-        $Ingredient->slug=$faker->unique()->word().' '. $j;
-        $Ingredient->save();
+        for ($i = 0; $i < 10; $i++) {
+            $j++;
+            $Ingredient = new Ingredient();
+            $Ingredient->slug=$faker->unique()->word().' '. $j;
+            $Ingredient->save();
+        }
     }
-}
 }

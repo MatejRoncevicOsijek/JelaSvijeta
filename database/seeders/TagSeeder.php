@@ -14,11 +14,12 @@ class TagSeeder extends Seeder
      *
      * @return void
      */
-        
-        
-        public function run(){
-            $faker = Faker::create();
-            $j=0;
+
+
+    public function run()
+    {
+        $faker = Faker::create();
+        $j=0;
 
         for ($i = 0; $i < 10; $i++) {
             $j++;
@@ -26,6 +27,5 @@ class TagSeeder extends Seeder
             $tag->slug=$faker->unique()->word().' '. $j;
             $tag->save();
         }
-    
     }
 }

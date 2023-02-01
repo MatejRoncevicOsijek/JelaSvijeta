@@ -17,8 +17,7 @@ class IngredientMealSeeder extends Seeder
      */
     public function run()
     {
-  
-        $id_meals = Meal::pluck('id');
+        $id_meals = Meal::withTrashed()->pluck('id');
         foreach ($id_meals as $id_meal) {
             $id_ingredients= Ingredient::pluck('id')->unique()->random(3)->all();
             foreach ($id_ingredients as $id_ingredient) {
@@ -26,7 +25,7 @@ class IngredientMealSeeder extends Seeder
                 'ingredient_id' => $id_ingredient,
                 'meal_id' => $id_meal,
                 ]);
-         }
+            }
         }
     }
 }

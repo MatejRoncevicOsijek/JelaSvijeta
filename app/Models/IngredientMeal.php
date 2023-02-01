@@ -10,6 +10,4 @@ class IngredientMeal extends Model
     use HasFactory;
 
     public $timestamps = false;
-
-    
 }

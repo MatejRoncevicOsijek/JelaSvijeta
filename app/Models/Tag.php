@@ -8,18 +8,18 @@ use App\Models\Meal;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class Tag extends Model   implements TranslatableContract
+class Tag extends Model implements TranslatableContract
 {
     use HasFactory;
 
 
     use Translatable;
-    
+
     public $translatedAttributes = ['title'];
     protected $fillable = ['slug'];
 
     public function meals()
     {
-        return $this->belongsToMany(Meal::class , "meal_tags", "tag_id", "meal_id");
+        return $this->belongsToMany(Meal::class, "meal_tags", "tag_id", "meal_id");
     }
 }
